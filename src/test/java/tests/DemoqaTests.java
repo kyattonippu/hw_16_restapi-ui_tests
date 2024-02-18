@@ -37,24 +37,27 @@ public class DemoqaTests extends TestBase {
                 BooksApi.addBookToCollection(collection.getBooks()[NULL].getIsbn(), authResponse.getToken(), authResponse.getUserId())
         );
 
-        Allure.step("Cookie consent, open profile", () ->
-             profilePage.clickOnCookieConsentIfDisplayed()
-                        .openProfilePage()
+        step("Accept cookie", () ->
+            profilePage.clickOnCookieConsentIfDisplayed()
         );
 
-        Allure.step("Check that book was added to collection", () ->
+        step("Open profile", () ->
+             profilePage.openProfilePage()
+        );
+
+        step("Check that book was added to collection", () ->
               profilePage.checkBookInCollection()
         );
 
-        Allure.step("Delete book from collection via UI", () ->
+        step("Delete book from collection via UI", () ->
              profilePage.deleteBookFromCollection()
         );
 
-        Allure.step("Confirm book deletion", () ->
+        step("Confirm book deletion", () ->
              profilePage.confirmDelete()
         );
 
-        Allure.step("Check that book was deleted from collection", () ->
+        step("Check that book was deleted from collection", () ->
              profilePage.checkTableBody(collection.getBooks()[NULL].getTitle())
         );
     }

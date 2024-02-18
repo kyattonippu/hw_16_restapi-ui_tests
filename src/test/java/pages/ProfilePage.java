@@ -22,38 +22,32 @@ public class ProfilePage {
         return this;
     }
 
-    public ProfilePage clickOnCookieConsentIfDisplayed() {
-        if (bannerRoot != null && bannerRoot.isDisplayed()) {
-            try {
-                bannerRoot.$(byText("Consent")).click();
-            } catch (Exception e) {
-                System.out.println("Failed to click on consent banner: " + e.getMessage());
-            }
+    public void clickOnCookieConsentIfDisplayed() {
+        if (bannerRoot.isDisplayed()) {
+            bannerRoot.$(byText("Consent")).click();
         }
-        else{
-            System.out.println("No consent banner");
-        }
-        return this;
     }
 
     public ProfilePage checkBookInCollection() {
         emptyRows.shouldNotBe(visible);
         return this;
     }
+
     public ProfilePage deleteBookFromCollection() {
         deleteButton.click();
         return this;
     }
+
     public ProfilePage confirmDelete() {
         okButton.click();
         Selenide.switchTo().alert().accept();
         Selenide.switchTo().parentFrame();
         return this;
     }
+
     public ProfilePage checkTableBody(String bookTitle) {
         open(PROFILE);
         tableBody.shouldNotHave(text(bookTitle));
         return this;
     }
-
 }
