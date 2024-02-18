@@ -38,7 +38,7 @@ public class DemoqaTests extends TestBase {
         );
 
         Allure.step("Cookie consent, open profile", () ->
-             profilePage.cookieConsent()
+             profilePage.clickOnCookieConsentIfDisplayed()
                         .openProfilePage()
         );
 

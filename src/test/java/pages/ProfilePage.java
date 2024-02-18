@@ -22,15 +22,20 @@ public class ProfilePage {
         return this;
     }
 
-    public ProfilePage cookieConsent() {
-        if (bannerRoot.isDisplayed()) {
-            bannerRoot.$(byText("Consent")).click();
+    public ProfilePage clickOnCookieConsentIfDisplayed() {
+        if (bannerRoot != null && bannerRoot.isDisplayed()) {
+            try {
+                bannerRoot.$(byText("Consent")).click();
+            } catch (Exception e) {
+                System.out.println("Failed to click on consent banner: " + e.getMessage());
+            }
         }
         else{
             System.out.println("No consent banner");
         }
         return this;
     }
+
     public ProfilePage checkBookInCollection() {
         emptyRows.shouldNotBe(visible);
         return this;
