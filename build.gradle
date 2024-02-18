@@ -11,9 +11,9 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.23.0",
+def allureVersion = "2.24.0",
     selenideVersion = "6.19.1",
-    junitVersion = "5.9.3",
+    junitVersion = "5.10.1",
     slf4jVersion = "2.0.7",
     restAssuredVersion = "5.4.0",
     assertjCoreVersion = "3.24.2",
@@ -45,10 +45,7 @@ dependencies {
             "io.github.bonigarcia:webdrivermanager:$webDriverManagerVersion",
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.rest-assured:json-schema-validator:$restAssuredVersion",
-            "com.jcraft:jsch:$jschVersion",
-            "org.aeonbits.owner:owner:$ownerVersion",
-            "com.github.javafaker:javafaker:1.0.2",
-            "org.awaitility:awaitility:4.2.0"
+            "org.aeonbits.owner:owner:$ownerVersion"
     )
 
     testRuntimeOnly(
