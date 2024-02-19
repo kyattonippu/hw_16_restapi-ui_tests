@@ -24,7 +24,7 @@ public class ProfilePage {
 
     public void clickOnCookieConsentIfDisplayed() {
         if (bannerRoot.isDisplayed()) {
-            bannerRoot.$("fc-button-label").click();
+            bannerRoot.$("fc-button fc-cta-consent fc-primary-button").click();
         }
     }
 

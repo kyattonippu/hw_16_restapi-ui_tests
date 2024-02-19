@@ -3,7 +3,6 @@ package tests;
 import api.AuthApi;
 import api.BooksApi;
 import helpers.WithLogin;
-import io.qameta.allure.Allure;
 import api.models.BookCollectionResponse;
 import api.models.LoginResponse;
 import org.junit.jupiter.api.DisplayName;
