@@ -37,9 +37,6 @@ public class DemoqaTests extends TestBase {
                 BooksApi.addBookToCollection(collection.getBooks()[NULL].getIsbn(), authResponse.getToken(), authResponse.getUserId())
         );
 
-        step("Accept cookie", () ->
-            profilePage.clickOnCookieConsentIfDisplayed()
-        );
 
         step("Open profile", () ->
              profilePage.openProfilePage()
