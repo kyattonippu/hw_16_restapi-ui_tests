@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static data.ApiEndpoints.PROFILE;
@@ -19,6 +20,12 @@ public class ProfilePage {
     public ProfilePage openProfilePage() {
         open(PROFILE);
         return this;
+    }
+
+    public void clickOnCookieConsentIfDisplayed() {
+        if (bannerRoot.isDisplayed()) {
+            bannerRoot.$(byText("Consent")).click();
+        }
     }
 
     public ProfilePage checkBookInCollection() {
